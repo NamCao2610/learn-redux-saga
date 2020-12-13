@@ -1,19 +1,22 @@
+// Tao 1 function generator 
 function* sayHi() {
-    yield 'hey'
+    yield 'hey' //Tao nhung buoc dong bo
     yield 'Nam'
     yield 'Dep'
     yield 'Trai'
-    return 'hi'
+    return 'hi' //Tra ve ket qua cuoi cung
 }
 
 const resultGenerator = sayHi();
 
-console.log(resultGenerator.next());
-console.log(resultGenerator.next());
-console.log(resultGenerator.next());
+console.log(resultGenerator.next()); // { value: 'hey', done: false}
+console.log(resultGenerator.next()); // { value: 'Nam', done: false}
+console.log(resultGenerator.next()); // { value: 'Dep', done: false}
+console.log(resultGenerator.next()); // { value: 'Trai', done: false}
+console.log(resultGenerator.next()); // { value: 'hi', done: true} Khi gap return se ket thuc function
 
 for (const i of resultGenerator) {
-    console.log(i);
+    console.log(i); // hey Nam dep trai 
 }
 
 function* sayHiNamdepzai() {
